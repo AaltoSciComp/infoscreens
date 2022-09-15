@@ -3,8 +3,9 @@
 This repository contains HTML slides for infoscreens around our
 university.  Public information only (obviously).
 
-Preview: https://aaltoscicomp.github.io/infoscreens/
-Currently deployed locally at different places, ask around.
+* Live preview: https://aaltoscicomp.github.io/infoscreens/
+* Deployed: https://users.aalto.fi/~darstr1/infoscreens/ (use this for
+  actual screens)
 
 
 
@@ -25,4 +26,3 @@ wget --recursive --mirror --page-requisites --no-host-directories --cut-dirs 1 h
 
 HTTP mirroring is probably less likely to be disruptive (or monitored)
 on Github than git pulling
-
