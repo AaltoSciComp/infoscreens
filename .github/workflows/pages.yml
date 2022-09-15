@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v3
       - name: build index.html from *.html
         run: |
-          for x in $(find . -name '*.html' ! -name index.html) ;
-              do echo $x ; echo "<a href=\"$x\">$x</a>" >> index.html
+          for x in $(find . -name '*.html' ! -name index.html | sort) ;
+              do echo $x ; echo "<a href=\"$x\">$x</a><br>" >> index.html
           done
       - name: deploy pages
         uses: peaceiris/actions-gh-pages@v3
