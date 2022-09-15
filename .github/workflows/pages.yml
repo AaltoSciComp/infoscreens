@@ -1,0 +1,29 @@
+name: github pages
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Single deploy job since we're just deploying
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: build index.html from *.html
+        run: |
+          for x in $(find . -name '*.html' ! -name index.html) ;
+              do echo $x ; echo "<a href=\"$x\">$x</a>" >> index.html
+          done
+      - name: deploy pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force_orphan: true
+          publish_dir: .
