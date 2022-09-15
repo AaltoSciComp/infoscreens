@@ -7,6 +7,16 @@ university.  Public information only (obviously).
 * Deployed: https://users.aalto.fi/~darstr1/infoscreens/ (use this for
   actual screens)
 
+## How it works
+
+* Push to this repository
+* Github actions deploys (within a minute or two) to [github
+  pages](https://aaltoscicomp.github.io/infoscreens/) .  The only
+  modifications are making an index.html file that lists all html
+  files in the repository.  Use this to immediately check.
+* Every hour, around xx:05, it mirrors to the [local
+  mirror](https://users.aalto.fi/~darstr1/infoscreens/).  Include URLs
+  from here to your info screens.
 
 
 ## Deployment
