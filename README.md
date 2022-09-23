@@ -7,9 +7,16 @@ university.  Public information only (obviously).
 * Deployed: https://users.aalto.fi/~darstr1/infoscreens/ (use this for
   actual screens)
 
+Any `*.html` in `slides/` ends up in `www/` and published.  Any
+`*.{png,jpg,jpeg,svg}` in `slides/` ends up in `www/` with a
+automatic html wrapper generated.
+
+
 ## How it works
 
 * Push to this repository
+* All date from slides/ is published.  All images get an auto-*.html
+  made in case the image has no associated html already.
 * Github actions deploys (within a minute or two) to [github
   pages](https://aaltoscicomp.github.io/infoscreens/) .  The only
   modifications are making an index.html file that lists all html

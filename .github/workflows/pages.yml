@@ -16,14 +16,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: build index.html from *.html
+      - name: generate output
         run: |
-          for x in $(find . -name '*.html' ! -name index.html | sort) ;
-              do echo $x ; echo "<a href=\"$x\">$x</a><br>" >> index.html
-          done
+          sh generate.sh
       - name: deploy pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
-          publish_dir: .
+          publish_dir: www/
