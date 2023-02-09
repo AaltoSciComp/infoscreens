@@ -29,12 +29,39 @@
 <body>
   <div>
     <h1>Research Software Engineers (RSE)</h1>
-    <h2>Specialist support regarding software, computing, and data</h2>
-    <h3>You should focus on the science, we help with the other tech stuff</h3>
+    <h2>You should focus on the science, we help with the <b>software, computing, and data</b></h2>
+    <h3></h3>
+    <a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a>
     <ul>
-      <li>More info: <a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a></li>
       <li>Best way to get started is SciComp garage, every day at 13:00: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
+      <li>For example,
+	<ul id="random">
+	</ul>
+      </li>
     </ul>
   </div>
+  <script type="text/javascript">
+    /* From https://stackoverflow.com/a/11935263 */
+    function getRandomSubarray(arr, size) {
+	var shuffled = arr.slice(0), i = arr.length, temp, index;
+	while (i--) {
+            index = Math.floor((i + 1) * Math.random());
+            temp = shuffled[index];
+            shuffled[index] = shuffled[i];
+            shuffled[i] = temp;
+	}
+	return shuffled.slice(0, size);
+    }
+    var options=`
+        Make a code re-usable
+        Emergency response for difficult bugs or problems
+        Automation, scale-up, using larger resources
+        Data handling
+        Releasing, publication, opening
+        `.trim().split('\n');
+    selected = getRandomSubarray(options, 3)
+    selected = selected.map(function(x) {return '<li>'+x+'</i>'});
+    document.getElementById("random").innerHTML=selected.join("\n");
+</script>
 </body>
 </html>
