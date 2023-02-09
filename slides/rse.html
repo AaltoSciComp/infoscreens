@@ -34,6 +34,7 @@
     <a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a>
     <ul>
       <li>Best way to get started is SciComp garage, every day at 13:00: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
+      <span id="extra"></span>
       <li>For example,
 	<ul id="randomized">
 	</ul>
@@ -41,6 +42,7 @@
     </ul>
   </div>
   <img style="width:15%; position:absolute; right: 5%; bottom: 2%" src="logo-hexagons-02-compact-background-square.svg">
+  <!-- Randomize the three bullet points -->
   <script type="text/javascript">
     /* From https://stackoverflow.com/a/11935263 */
     function getRandomSubarray(arr, size) {
@@ -71,6 +73,23 @@
     selected = getRandomSubarray(options, 3)
     selected = selected.map(function(x) {return '<li>'+x+'</i>'});
     document.getElementById("randomized").innerHTML=selected.join("\n");
-</script>
+  </script>
+  <!-- Insert "?extra=" in url into a bullet point -->
+  <script>
+    /* https://stackoverflow.com/a/901144 */
+    function getParameterByName(name, url = window.location.href) {
+	name = name.replace(/[\[\]]/g, '\\$&');
+	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    extra = getParameterByName("extra");
+    console.log(extra);
+    if (extra) {
+	document.getElementById("extra").innerHTML='<li>'+extra+'</li>';
+    }
+  </script>
 </body>
 </html>
