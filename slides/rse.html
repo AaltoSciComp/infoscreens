@@ -35,7 +35,7 @@
     <ul>
       <li>Best way to get started is SciComp garage, every day at 13:00: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
       <li>For example,
-	<ul id="random">
+	<ul id="randomized">
 	</ul>
       </li>
     </ul>
@@ -53,15 +53,23 @@
 	return shuffled.slice(0, size);
     }
     var options=`
-        Make a code re-usable
+        Package your software so it's installable by anyone (and you)
+        Open-source your software
+        Create a data collection platform
+        Create a website to demonstrate your method
         Emergency response for difficult bugs or problems
-        Automation, scale-up, using larger resources
-        Data handling
+        Automate your workflow to save you time and do more
+        Scale-up to larger resources
+        Move your work to the LUMI supercomputer
+        Preprocess data to make your work easier
+        Fix or improve other open-source software for you
         Releasing, publication, opening
+        Use git/GitLab/GitHub better
+        Plan your ambitions for your next grant
         `.trim().split('\n');
     selected = getRandomSubarray(options, 3)
     selected = selected.map(function(x) {return '<li>'+x+'</i>'});
-    document.getElementById("random").innerHTML=selected.join("\n");
+    document.getElementById("randomized").innerHTML=selected.join("\n");
 </script>
 </body>
 </html>
