@@ -14,7 +14,7 @@ done
 
 # Add all HTML files to the index
 rm $OUT/index.html
-echo "<p>This is not meant for direct consumption; not all of these are active or current.</p>" >> $OUT/index.html
+echo "<p>This is not meant for direct consumption; not all of these are active or current.  For internal use, see <a href=\"https://users.aalto.fi/~darstr1/infoscreens/\">https://users.aalto.fi/~darstr1/infoscreens/</a>.</p>" >> $OUT/index.html
 for x in $(find $OUT -name '*.html' ! -name index.html | sort) ; do
     echo indexing html $x
     FILE=$(realpath --relative-to=$OUT "$x")
