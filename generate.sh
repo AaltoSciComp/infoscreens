@@ -14,7 +14,7 @@ done
 
 # Add all HTML files to the index
 rm $OUT/index.html
-echo "<p>This is not meant for direct consumption; not all of these are active or current - the deployer should know which are relevant.  Also, use the local mirror for the actual screens, ask Richard or someone in scicomp for the link.</p>" >> $OUT/index.html
+echo "<p>This is not meant for direct consumption; not all of these are active or current - the deployer should know which are relevant.  Also, use the local mirror for the actual screens, ask Richard or someone in scicomp for the link.  Last update: $(date)</p>" >> $OUT/index.html
 for x in $(find $OUT -name '*.html' ! -name index.html | sort) ; do
     echo indexing html $x
     FILE=$(realpath --relative-to=$OUT "$x")
