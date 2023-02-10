@@ -4,8 +4,8 @@ This repository contains HTML slides for infoscreens around our
 university.  Public information only (obviously).
 
 * Live preview: https://aaltoscicomp.github.io/infoscreens/
-* Deployed: https://users.aalto.fi/~darstr1/infoscreens/ (use this for
-  actual screens)
+* Deployed: (ask Richard or someone in SciComp for the link) (use this for
+  actual screens to not cause excess Github traffic)
 
 Any `*.html` in `slides/` ends up in `www/` and published.  Any
 `*.{png,jpg,jpeg,svg}` in `slides/` ends up in `www/` with a
@@ -21,9 +21,11 @@ automatic html wrapper generated.
   pages](https://aaltoscicomp.github.io/infoscreens/) .  The only
   modifications are making an index.html file that lists all html
   files in the repository.  Use this to immediately check.
-* Every four hours, around xx:05 (where xx%4==0), it mirrors to the
-  [local mirror](https://users.aalto.fi/~darstr1/infoscreens/), and is
-  displayed from there.  Include URLs from here to your info screens.
+* Every hour, around xx:05 (could be updated), it mirrors to the local
+  mirror at Aalto (ask Richard or someone in SciComp for the link,
+  it's not listed here).  Include URLs from here to your info screens,
+  and ...
+* The infoscreens have the URLs from their in their playlists.
 
 
 ## Deployment
@@ -41,5 +43,5 @@ a command such as this:
 wget --recursive --mirror --page-requisites --no-host-directories --cut-dirs 1 https://aaltoscicomp.github.io/infoscreens/
 ```
 
-HTTP mirroring is probably less likely to be disruptive (or monitored)
-on Github than git pulling
+Periodic HTTP mirroring is probably less likely to be disruptive (or
+monitored) on Github than pulling an update via git.
