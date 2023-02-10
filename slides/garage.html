@@ -35,22 +35,71 @@
   <div>
     <h1>Don't waste time on solved problems</h1>
     <img style="width:15%; float:right" src="qr-code-garage.svg">
-    <h3>Come to the daily Scientific Computing garage session</h3>
+    <h3>Researchers and staff, come to the daily Scientific Computing garage session</h3>
     <h3>"Excuse me, I have a quick question..." can save you time and
     improve your career</h3>
     <ul>
-      <li> <b>Where?</b> Zoom, everyday, 13:00 <a style="white-space:
-      nowrap" href="https://scicomp.aalto.fi/help/">scicomp.aalto.fi/help/garage/</a></li>
+      <li> <b>What?</b> Informally ask us about <span id="randomized"><span style="no-wrap">Triton
+           usage</span>, <span style="no-wrap">remote access</span>, Python, etc. (or even just
+           chat)</span>, ...</li>
+      <li> <b>Where?</b> Zoom, everyday, 13:00 <a style="white-space: nowrap"
+           href="https://scicomp.aalto.fi/help/">scicomp.aalto.fi/help/garage/</a></li>
       <li> <b>Who?</b> We are <span style="no-wrap">Triton
-      administrators</span>, <span style="no-wrap">Research Software
-      Engineers</span>, <span style="no-wrap">Data
-      Agents</span>, <span style="no-wrap">workstation software maintainers</span>, &hellip;</li>
-      <li> <b>What?</b> Informally ask us about computing, data,
-      software, <span style="no-wrap">Triton
-      usage</span>, <span style="no-wrap">remote access</span>, Python, etc. (or even just chat).</li>
+           administrators</span>, <span style="no-wrap">Research Software
+           Engineers</span>, <span style="no-wrap">Data
+           Agents</span>, <span style="no-wrap">workstation software maintainers</span>,
+           &hellip;</li>
       <!--<li> <b>Why?</b> To help you with questions about computing and data in your research</li>-->
     </ul>
   </div>
   <img style="width:10%; position:absolute; right: 5%; bottom: 2%" src="logo-hexagons-02-compact-background-square.svg">
+  <!-- Randomize the three bullet points -->
+  <script type="text/javascript">
+    /* From https://stackoverflow.com/a/11935263 */
+    function getRandomSubarray(arr, size) {
+	var shuffled = arr.slice(0), i = arr.length, temp, index;
+	while (i--) {
+            index = Math.floor((i + 1) * Math.random());
+            temp = shuffled[index];
+            shuffled[index] = shuffled[i];
+            shuffled[i] = temp;
+	}
+	return shuffled.slice(0, size);
+    }
+    var options=`
+git
+GitHub
+GitLab
+pull requests
+tricky bugs
+computing
+data
+programming
+remote access
+Matlab
+Python
+R
+C
+C++
+Linux workstation problems
+Triton problems
+batch jobs on Triton
+CSC resources
+what computing tools you should be using
+installing tensorflow
+installing pytorch
+conda environments
+pip install --user
+VSCode connection to Triton
+data storage on Triton
+data storage at departments
+Jupyter on Triton
+compiling code
+interactive jobs on Triton
+        `.trim().split('\n');
+    selected = getRandomSubarray(options, 5)
+    //selected = selected.map(function(x) {return '<li>'+x+'</i>'});
+    document.getElementById("randomized").innerHTML=selected.join(", ");
+  </script>
 </body>
 </html>

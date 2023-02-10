@@ -72,7 +72,7 @@
         Plan your ambitions for your next grant
         `.trim().split('\n');
     selected = getRandomSubarray(options, 3)
-    selected = selected.map(function(x) {return '<li>'+x+'</i>'});
+    selected = selected.map(function(x) {return '<li>'+x+'</li>'});
     document.getElementById("randomized").innerHTML=selected.join("\n");
   </script>
   <!-- Insert "?extra=" in url into a bullet point -->
