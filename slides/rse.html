@@ -30,16 +30,17 @@
 <body>
   <div>
     <h1>Research Software Engineers (RSE)</h1>
-    <h2>You should focus on the science, we help with the <b>software, computing, and data</b></h2>
+    <h2>You should focus on the science, let us help with the <b>software, computing, and data</b>.</h2>
     <h3></h3>
-    <a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a>
     <ul>
-      <li>Best way to get started is SciComp garage, every day at 13:00: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
       <span id="extra"></span>
       <li>For example,
 	<ul id="randomized">
 	</ul>
       </li>
+      <li><a href="mailto:rse-group@aalto.fi">rse-group@aalto.fi</a>
+      or visit us every workday at 13:00 at the SciComp garage: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
+      <li><a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a></li>
     </ul>
   </div>
   <img style="width:8%; position:absolute; right: 2%; bottom: 2%" src="logo-hexagons-02-compact-background-square.svg">
@@ -47,19 +48,24 @@
   <!-- Randomize the three bullet points -->
   <script type="text/javascript">
     var options=`
-        Package your software so it's installable by anyone (and you)
-        Open-source your software
-        Create a data collection platform
-        Create a website to demonstrate your method
-        Emergency response for difficult bugs or problems
-        Automate your workflow to save you time and do more
-        Scale-up to larger resources
-        Move your work to the LUMI supercomputer
-        Preprocess data to make your work easier
-        Fix or improve other open-source software for you
-        Releasing, publication, opening
-        Use git/GitLab/GitHub better
-        Plan your ambitions for your next grant
+Python, R, MATLAB (and more) project support
+Package your software so it's installable by anyone (and you)
+Open-source your software
+Create a data collection platform
+Create an interactive website to showcase your method
+Emergency response for difficult bugs or problems
+Automate your workflow
+Scale-up to larger resources
+Parallelize your work
+Move your work to the LUMI supercomputer
+Preprocess data to make your work easier
+Create a database to hold your data
+Fix or improve other open-source software you need
+Releasing, publication, opening your code
+Use git/GitLab/GitHub better
+Plan your ambitions for your next grant
+Re-use someone else's code
+Code a method for you
         `.trim().split('\n');
     selected = getRandomSubarray(options, 3)
     selected = selected.map(function(x) {return '<li>'+x+'</li>'});
