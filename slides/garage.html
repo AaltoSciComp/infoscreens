@@ -16,12 +16,23 @@
       height: 100%;
       background-color: #ffffff55;
     }
-    div {
+    div.main {
       background-color: rgba(255, 255, 255, 0.9);
       margin: 2% auto;
       padding: 1em 12%;
     }
-    li { margin: 1.2em; }
+    div.examples {
+	column-count: 2;
+	line-height: 150%;
+	font-size: 90%
+    }
+    .examples li {
+	margin: 0; // Margin is handled differently between columns
+	padding: .5ex 1em;
+    }
+    li {
+	margin: 1.2em;
+    }
     .onsite {
       font-style: italic;
      }
@@ -32,18 +43,23 @@
   </style>
 </head>
 <body>
-  <div>
+  <div class="main">
     <h1>Don't waste time on solved problems</h1>
     <img style="width:15%; float:right" src="qr-code-garage.svg">
     <h3>Computer tools can be hard, don't go alone!</h3>
     <h3>Researchers and staff, come to the daily Scientific Computing garage session</h3>
     <ul>
-      <li> <b>What?</b> Informally ask us about <span id="randomized"><span style="no-wrap">Triton
-           usage</span>, <span style="no-wrap">remote access</span>, Python, etc. (or even just
-           chat)</span>, ...</li>
-      <li> <b>Where?</b> Zoom, everyday, 13:00 <a style="white-space: nowrap"
+      <li> <b>What?</b> Informally ask us about
+	<div class="examples">
+	  <ul>
+	    <span id="randomized"> <span style="no-wrap">Triton usage</span>, <span style="no-wrap">remote access</span>, Python, etc. (or even just chat)</span>
+	    <li>+ more... </li>
+	  </ul>
+	</div>
+      </li>
+      <li> <b>Where?</b> Zoom, everyday, 13:00, <a style="white-space: nowrap"
            href="https://scicomp.aalto.fi/help/">scicomp.aalto.fi/help/garage/</a></li>
-      <li> <b>Who?</b> We are <span style="no-wrap">Triton
+      <li> <b>Who's there?</b> We are <span style="no-wrap">Triton
            staff</span>, <span style="no-wrap">Research Software
            Engineers</span>, Department IT, <span style="no-wrap">Data
            Agents</span>, <span style="no-wrap">workstation software maintainers</span>,
@@ -87,8 +103,8 @@ compiling code
 interactive jobs on Triton
         `.trim().split('\n');
     selected = getRandomSubarray(options, 5)
-    //selected = selected.map(function(x) {return '<li>'+x+'</i>'});
-    document.getElementById("randomized").innerHTML=selected.join(", ");
+    selected = selected.map(function(x) {return '<li>'+x+'</i>'});
+    document.getElementById("randomized").innerHTML=selected.join(", ")+',';
   </script>
 </body>
 </html>
