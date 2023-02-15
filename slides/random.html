@@ -28,6 +28,18 @@ rse-web-demos.html
     if (url_options) {
 	options = url_options.split(',')
     }
+    function is_allowed_include(x) {
+	// Example for allowing certain paths
+	//if (x.startswith('https://aaltoscicomp.github.io/infoscreens/'))
+	//    return true
+	// Allow local pages that don't include '/'.
+	if (! x.includes('/'))
+	    return true
+	// Default deny
+	console.log("Excluding page from random selection:", x)
+	return false
+    }
+    options = options.filter(is_allowed_include)
     selected = getRandomSubarray(options, 1)
     //selected = selected.map(function(x) {return '<li>'+x+'</li>'});
     document.getElementById("inner").src=selected[0];
