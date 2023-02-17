@@ -19,3 +19,18 @@ function getParameterByName(name, url = window.location.href) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+/* Hide elements with class="expire" and lastdate="..." > Date() */
+function expireOldItems() {
+    now = new Date()
+    objects = document.getElementsByClassName('expire');
+    for (obj of objects) {
+	if (obj.attributes == undefined && ! obj.attributes.includes('expire'))
+	    continue
+	expireDate = new Date(obj.attributes['expire'].value)
+	if (expireDate < now) {
+	    obj.hidden = true;
+	}
+    }
+
+}
