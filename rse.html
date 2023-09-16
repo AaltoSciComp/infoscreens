@@ -1,0 +1,84 @@
+<html>
+<head>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta charset="utf-8">
+  <style>
+    html {
+      background: url(rse.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font: 2vmax ubuntu, sans-serif;
+      #color: #006fb7;
+      color: #edece3;
+    }
+    div {
+      background-color: rgba(80, 75, 72, 0.95);
+      margin: auto;
+      width: 75%;
+      //height: 100%;
+      padding: 1em 2em;
+    }
+    li { margin: 1.2em; }
+    .onsite {
+      font-style: italic;
+     }
+    h1 { font-size: 1.6em; }
+    h2 { font-size: 1.2em; }
+    h3 { font-size: 2vmax; }
+    a { color: turquoise; }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Research Software Engineers (RSE)</h1>
+    <h2>You should focus on the science, let us help with the <b>software, computing, and data</b>.</h2>
+    <h3></h3>
+    <ul>
+      <span id="extra"></span>
+      <li>For example,
+	<ul id="randomized">
+	</ul>
+      </li>
+      <li><a href="mailto:rse-group@aalto.fi">rse-group@aalto.fi</a>
+      or visit us every workday at 13:00 at the SciComp garage: <a href="https://scicomp.aalto.fi/help/garage/">scicomp.aalto.fi/help/garage/</a></li>
+      <li><a href="https://scicomp.aalto.fi/rse/">scicomp.aalto.fi/rse/</a></li>
+    </ul>
+  </div>
+  <img style="width:8%; position:absolute; right: 2%; bottom: 2%" src="logo-hexagons-02-compact-background-square.svg">
+  <script src="slides.js"></script>
+  <!-- Randomize the three bullet points -->
+  <script type="text/javascript">
+    var options=`
+Python, R, MATLAB (and more) project support
+Package your software so it's installable by anyone (and you)
+Open-source your software
+Create a data collection platform
+Create an interactive website to showcase your method
+Emergency response for difficult bugs or problems
+Automate your workflow
+Scale-up to larger resources
+Parallelize your work
+Move your work to the LUMI supercomputer
+Preprocess data to make your work easier
+Create a database to hold your data
+Fix or improve other open-source software you need
+Releasing, publication, opening your code
+Use git/GitLab/GitHub better
+Jupyter notebooks to parallel workflow
+Plan your ambitions for your next grant
+Re-use someone else's code
+Code a method for you
+        `.trim().split('\n');
+    selected = getRandomSubarray(options, 3)
+    selected = selected.map(function(x) {return '<li>'+x+'</li>'});
+    document.getElementById("randomized").innerHTML=selected.join("\n");
+  </script>
+  <!-- Insert "?extra=" in url into a bullet point -->
+  <script>
+    extra = getParameterByName("extra");
+    console.log(extra);
+    if (extra) {
+	document.getElementById("extra").innerHTML='<li>'+extra+'</li>';
+    }
+  </script>
+</body>
+</html>

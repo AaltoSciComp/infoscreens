@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta charset="utf-8">
+  <style>
+    html {
+      background: url(garage-installationdesk.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font: 2vmax ubuntu, sans-serif;
+      color: #666;
+      padding: 0px;
+    }
+    body {
+      margin: 0px;
+      padding-top: 1px;
+      height: 100%;
+      background-color: #ffffff55;
+    }
+    div.main {
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 2% auto;
+      padding: 1em 12%;
+    }
+    div.examples {
+	column-count: 2;
+	line-height: 150%;
+	font-size: 90%
+    }
+    .examples li {
+	margin: 0; // Margin is handled differently between columns
+	padding: .5ex 1em;
+    }
+    li {
+	margin: 1.2em;
+    }
+    .onsite {
+      font-style: italic;
+     }
+    h1 { font-size: 1.8em; color: orangered; }
+    h2 { font-size: 1.2em; }
+    h3 { font-size: 2vmax; }
+    a { color: rgb(0, 0, 255); }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>Don't waste time on solved problems</h1>
+    <img style="width:15%; float:right" src="qr-code-garage.svg">
+    <h3>Computer tools can be hard, don't go alone!</h3>
+    <h3>Researchers and staff, come to the daily Scientific Computing garage session</h3>
+    <ul>
+      <li> <b>What?</b> Informally ask us about
+	<div class="examples">
+	  <ul>
+	    <span id="randomized"> <span style="no-wrap">Triton usage</span>, <span style="no-wrap">remote access</span>, Python, etc. (or even just chat)</span>
+	    <li>+ more... </li>
+	  </ul>
+	</div>
+      </li>
+      <li> <b>Where?</b> Zoom, everyday, 13:00, <a style="white-space: nowrap"
+           href="https://scicomp.aalto.fi/help/">scicomp.aalto.fi/help/garage/</a></li>
+      <li> <b>Who's there?</b> We are <span style="no-wrap">Triton
+           staff</span>, <span style="no-wrap">Research Software
+           Engineers</span>, Department IT, <span style="no-wrap">Data
+           Agents</span>, <span style="no-wrap">workstation software maintainers</span>,
+           &hellip;</li>
+      <!--<li> <b>Why?</b> To help you with questions about computing and data in your research</li>-->
+    </ul>
+  </div>
+  <img style="width:8%; position:absolute; right: 2%; bottom: 2%" src="logo-hexagons-02-compact-background-square.svg">
+  <script src="slides.js"></script>
+  <!-- Randomize the three bullet points -->
+  <script type="text/javascript">
+    var options=`
+git
+GitHub
+GitLab
+pull requests
+tricky bugs
+computing
+data
+programming
+remote access
+Matlab
+Python
+R
+C
+C++
+Linux workstation problems
+Triton problems
+batch jobs on Triton
+CSC resources
+what computing tools you should be using
+installing tensorflow
+installing pytorch
+conda environments
+pip install --user
+VSCode connection to Triton
+data storage on Triton
+data storage at departments
+Jupyter on Triton
+Jupyter notebooks
+compiling code
+interactive jobs on Triton
+        `.trim().split('\n');
+    selected = getRandomSubarray(options, 5)
+    selected = selected.map(function(x) {return '<li>'+x+'</i>'});
+    document.getElementById("randomized").innerHTML=selected.join(", ")+',';
+  </script>
+</body>
+</html>

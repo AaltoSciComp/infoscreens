@@ -1,0 +1,48 @@
+<!-- This page will randomly insert other pages.  You can use
+  ?pages=page1.html, page2.html, etc. to select them from the URL. -->
+<html>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta charset="utf-8">
+  <style>
+    body {
+	margin: 0;
+	background: black;
+    }
+    iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+    }
+  </style>
+  <body>
+    <span><iframe  id="inner" src="rse.html"></iframe></span>
+  <script src="slides.js"></script>
+  <script type="text/javascript">
+    var options=`
+rse.html
+garage.html
+scip.html
+rse-web-demos.html
+        `.trim().split('\n');
+    url_options = getParameterByName('pages')
+    if (url_options) {
+	options = url_options.split(',')
+    }
+    function is_allowed_include(x) {
+	// Example for allowing certain paths
+	//if (x.startswith('https://aaltoscicomp.github.io/infoscreens/'))
+	//    return true
+	// Allow local pages that don't include '/'.
+	if (! x.includes('/'))
+	    return true
+	// Default deny
+	console.log("Excluding page from random selection:", x)
+	return false
+    }
+    options = options.filter(is_allowed_include)
+    selected = getRandomSubarray(options, 1)
+    //selected = selected.map(function(x) {return '<li>'+x+'</li>'});
+    document.getElementById("inner").src=selected[0];
+  </script>
+  </body>
+</html>
